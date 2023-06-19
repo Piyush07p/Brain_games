@@ -1,0 +1,59 @@
+
+.hidden_sec{
+     width: 100%;
+     border: 2px solid;
+     height: 80vh;
+
+}
+.hidden_timer{
+   display: flex;
+   margin: 1rem;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 3rem;
+   border-radius: 1rem;
+   
+} 
+.hidden_timer h1{
+    border: 2px solid;
+    border: none;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+    padding: 0.3rem 1rem;
+
+    
+}
+.game_area{
+    display: flex;
+    border: 2px solid;
+    width: 100%;
+    height: 20rem;
+    justify-content: center;
+    align-items: center;
+}
+.game_area div{
+    margin: 1rem;
+    border: 2px solid;
+    width: 8rem;
+    height:8rem;
+}
+.game_area div img{
+    width:100%;
+    height:100%
+}
+.hidden_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.hidden_btn button{
+    width: 15rem;
+    height: 3rem;
+    background-color: rgb(33, 226, 33);
+    color: #fff;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+
+}
+
