@@ -43,7 +43,7 @@ const Flipandmatch=()=>{
             divs.style.transform="";
            
 
-        },1000)
+        },600)
       
     }
     
