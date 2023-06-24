@@ -92,11 +92,11 @@
      }
      @media (max-width:400px) {
         .diff-sec{
-            width: 16rem;
+            width: 18rem;
             height: 28rem;
          }
         .diff_parent{
-            width: 15rem;
+            width: 16rem;
             height: 20rem; 
             
             grid-template-columns: repeat(4,1fr); 

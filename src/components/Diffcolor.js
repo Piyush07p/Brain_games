@@ -22,7 +22,7 @@ const Diffcolor = () => {
               if(i!=randbox){
                bgclr[i].style.background=color ; 
               }else{
-               bgclr[randbox].style.background=`rgb(${a},${b},${c-22})`
+               bgclr[randbox].style.background=`rgb(${a},${b},${c-25})`
               }
           }
      }
