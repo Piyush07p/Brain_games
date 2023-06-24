@@ -4,8 +4,8 @@ import '../css/clrmatch.css'
 const Colormatch=()=>{
 
     let arr=["red","green","blue","yellow","black","purple","pink"];
-    let colors=useRef(" ")
-    let timer=document.querySelector('.time')
+    
+   
     // let scores=document.querySelector('.scores')
     const  [scores,setScores]=useState(0)
     var corr=false;
@@ -14,21 +14,23 @@ const Colormatch=()=>{
 
 
     // change_color function-->
+  let [str,setStr]=useState("")
 
-    const [num,setNum]=useState("");
-    const [randomclr,setRandomclr]=useState("");
+    const changeColor=()=>{ 
+        let colors=document.querySelector('.color')
+        let timer=document.querySelector('.time')
+         setStr(arr[Math.floor(Math.random() * arr.length)])
 
-        function changeColor(){ 
-        setNum(arr[Math.floor(Math.random() * arr.length)])
-        setRandomclr(arr[Math.floor(Math.random() * arr.length)])
-    
-        //    colors.current.style.color=randomclr
-        //    timer.style.background=randomclr
-        console.log(num);
-        console.log(randomclr);
-
-        if (num === randomclr)
-            corr = true;
+        // setRandomclr(arr[Math.floor(Math.random() * arr.length)])
+        let randomclr=arr[Math.floor(Math.random() * arr.length)]
+            colors.style.color=randomclr
+            timer.style.background=randomclr
+            
+            
+        if (str === randomclr){
+            corr= true;
+           
+        }
 
         setIter(iter+1);
 
@@ -60,7 +62,7 @@ const Colormatch=()=>{
 
 // start the game--------
 
-let startgame='';
+let  startgame='';
 
 const Start=()=>{
 //    timer.style.animation = "timebar 1.3s linear infinite"
@@ -118,13 +120,13 @@ const stop=()=>{
 
                 <div className="timer">
                     <div>
-                        <p ref={timer} className="time"></p>
+                        <p  className="time"></p>
                     </div>
                 </div>
 
                 <div className="main_box">
                     <div className="gamebox">
-                        <h1 ref={colors}  className="color">{num}</h1>
+                        <h1  className="color">{str}</h1>
                     </div>
                 </div>
                 <div className="score">

@@ -7,7 +7,7 @@ import Colormatch from './components/Colormatch'
 
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Flipandmatch from './components/Flipandmatch';
-
+import Diffcolor from './components/Diffcolor';
 const App=()=>{
   return(
     <>
@@ -18,6 +18,7 @@ const App=()=>{
                 <Route path={'/Colormatch'} element={<Colormatch/>}/>
                 <Route path={'/hidden'} element={<Hidden/>}/>
                 <Route path={'/Flip'} element={<Flipandmatch/>}/>
+                <Route path={'/Diffcolor'} element={<Diffcolor/>}/>
             </Routes>
         </BrowserRouter>
     </>
