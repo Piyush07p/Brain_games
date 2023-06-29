@@ -14,6 +14,7 @@ const Mathpair = () => {
          let time_bar=document.querySelector('.time_bar')
          alert("you scored: "+counter+"out of 12")
          time_bar.classList.remove("time_bar_animate")
+         counter=0;
          setNumbox([])
         },15000)
     }
