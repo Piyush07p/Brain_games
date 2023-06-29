@@ -11,8 +11,10 @@ const Mathpair = () => {
     let mathrules=document.querySelector('.Math_rules')
     const gameOver=()=>{
         const timerout=setTimeout(()=>{
+         let time_bar=document.querySelector('.time_bar')
          alert("you scored: "+counter+"out of 12")
-         window.location.reload();
+         time_bar.classList.remove("time_bar_animate")
+         setNumbox([])
         },15000)
     }
     function genNum(){
