@@ -1,0 +1,196 @@
+
+.Mathpair_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.mathtimer{
+    
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    flex-direction: column;
+}
+.span_time{
+    border: 2px solid;
+    width: 6rem;
+    height: 2rem;
+    margin: 0.4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time_bar_div{
+     width: 22rem;
+     height: 1rem;
+     border: 1px solid;
+     border-radius: 0.5rem;
+     display: flex;
+     align-items: center;
+     
+}
+.time_bar{
+    width: 0rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(241, 62, 62);
+    margin: 1rem 0;
+}
+.time_bar_animate{
+    animation: animate 15s linear infinite;
+}
+@keyframes animate {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.mpair_box{
+    width: 34rem;
+    height: 30rem;
+    border-radius: 2rem;
+    background-color: rgb(22, 107, 79);
+    box-shadow: 3px 5px 5px rgba(0,0,0,0.5);
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: repeat(4,1fr);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.math_btn{
+    display: flex;
+    justify-content: center;
+
+
+}
+.math_btn button{
+    margin: 1rem;
+    width: 10rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: 2px solid rgb(11, 95, 85);
+    border-radius: 0.6rem;
+}
+
+.math_play{
+    border-radius: 1rem;
+    width:5rem;
+    box-shadow: 3px 5px 5px rgba(0,0,0,0.4);
+    background-color:aqua;
+    margin: 0.5rem;
+    height: 5rem;
+    text-align: center;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Math_rules{
+   
+    box-shadow: 3px 5px 8px rgba(0,0,0,0.4);
+    width: 25rem;
+    background-color: rgb(40, 118, 118);
+    color: #fff;
+    padding: 0.5rem;
+    position: absolute;
+    top: -420px;
+    z-index: 100;
+    transition: 0.5s ease all;
+    /* transform: scale(1); */
+    
+}
+.Math_rules h1{
+  text-align: center;
+  color: black;
+}
+.Math_rules button{
+    width: 8rem;
+    height: 2.3rem;
+    cursor: pointer;
+  }
+
+/* -------------media_query-------------------- */
+
+@media (max-width:720px){
+    .Math_rules{
+        width: 22rem;
+        
+    }
+    .mpair_box{
+        width: 30rem;
+        height: 26rem;
+    }
+    .math_play{
+        width:4.4rem;
+        height:4.4rem ;        
+    }
+}
+@media (max-width:580px){
+    .Math_rules{
+        width: 22rem;
+        
+    }
+    .mpair_box{
+        width: 26rem;
+        height: 24rem;
+    }
+    .math_play{
+        width:4.4rem;
+        height:4.4rem ;        
+    }
+    .time_bar_div{
+        width: 18rem;
+        height: 1rem;   
+        
+   }
+}
+@media (max-width:480px){
+    .Math_rules{
+        width: 22rem;
+        
+    }
+    .mpair_box{
+        width: 20rem;
+        height: 19rem;
+    }
+    .math_play{
+        width:3.2rem;
+        height:3.2rem ;        
+    }
+    .time_bar_div{
+        width: 16rem;
+        height: 1rem;   
+        
+   }
+   
+}
+@media (max-width:380px){
+    .Math_rules{
+        width: 16rem;
+        font-size: 0.9rem;
+        height: 22rem;
+    }
+    .mpair_box{
+        width: 16rem;
+        height: 19rem;
+    }
+    .math_play{
+        width:3rem;
+        height:3rem ;   
+        font-size: 0.8rem;     
+    }
+    .time_bar_div{
+        width: 16rem;
+        height: 1rem;   
+        
+   }
+}

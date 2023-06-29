@@ -4,7 +4,7 @@ import Home from './components/home';
 import Newcell from './components/New_cell'
 import Hidden from './components/hidden'
 import Colormatch from './components/Colormatch'
-
+import Mathpair from './components/Mathpair'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Flipandmatch from './components/Flipandmatch';
 import Diffcolor from './components/Diffcolor';
@@ -16,7 +16,7 @@ const App=()=>{
                 <Route path={'/'} element={<Home/>}/>
                 <Route path={'/cell'} element={<Newcell/>}/>
                 <Route path={'/Colormatch'} element={<Colormatch/>}/>
-                <Route path={'/hidden'} element={<Hidden/>}/>
+                <Route path={'/mathpair'} element={<Mathpair/>}/>
                 <Route path={'/Flip'} element={<Flipandmatch/>}/>
                 <Route path={'/Diffcolor'} element={<Diffcolor/>}/>
             </Routes>

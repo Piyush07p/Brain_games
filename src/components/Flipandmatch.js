@@ -48,20 +48,20 @@ const Flipandmatch=()=>{
     }
     
     
-    const flipchange=(e)=>{
+    const flipchange=(e,index)=>{
          clearInterval(setInt);
-         divs=document.querySelectorAll('.flip_box')[e]
+         divs=document.querySelectorAll('.flip_box')[index]
          
          if(clickcount<3){
             divs.style.transform="rotateY(180deg)"
             divs.style.transition="1s ease all"
             clickcount++;
             if(clickcount===1){
-                firstcard=flipdata[e].name; 
+                firstcard=flipdata[index].name; 
                 prev=divs;   //assigning the  reference of previous card flipped
                  
             }else{
-                seccard=flipdata[e].name;
+                seccard=flipdata[index].name;
 
               }
             if(firstcard&&seccard){
@@ -81,17 +81,6 @@ const Flipandmatch=()=>{
     const[timer,setTimer]=useState(0)
     const[startTimer,setStartTimer]=useState(false);
 
-    // useEffect(()=>{
-    //     let intervalId=null;
-    //     if(startTimer){
-    //         intervalId=setInterval(()=>{
-    //             setTimer(prev=>prev+=1);
-
-    //         },1000)
-    //     }else{
-    //         clearInterval(intervalId)
-    //     }
-    // },[startTimer])
     
    
     return(
@@ -101,11 +90,11 @@ const Flipandmatch=()=>{
              
             <section className="flip_sec">
                   {
-                      flipbox.map((e)=>{
+                      flipbox.map((e,index)=>{
                           
                           return(
                               <>
-                                 <div onClick={()=>flipchange(e.id)} className="flip_box">
+                                 <div onClick={()=>flipchange(e.id,index)} className="flip_box">
                                         <div className="front_card">
 
                                         </div>

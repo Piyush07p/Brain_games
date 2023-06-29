@@ -9,7 +9,7 @@ const Home=(props)=>{
             <section className="home_sec" >
                {/* <Braingames title="New Cell" route="/cell"/> */}
                <Braingames title="Color match" route="/Colormatch"/>
-               {/* <Braingames title="Hidden key" route="/hidden"/> */}
+               <Braingames title="Mathematical pair" route="/mathpair"/>
                <Braingames title="Flip & Match" route="/Flip"/>
                <Braingames title="Different color" route="/Diffcolor"/>
 
