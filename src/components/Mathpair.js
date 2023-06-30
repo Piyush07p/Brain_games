@@ -16,7 +16,7 @@ const Mathpair = () => {
          time_bar.classList.remove("time_bar_animate")
          counter=0;
          setNumbox([])
-        },15000)
+        },18000)
     }
     function genNum(){
         gameOver();
@@ -122,9 +122,9 @@ const Mathpair = () => {
   return (
        <section className='Mathpair_section'>
                 <div className="mathtimer">
-                      <div className='span_time'>
+                      {/* <div className='span_time'>
                          <span>00</span>
-                      </div>
+                      </div> */}
                       <div className='time_bar_div' >
                          <h1 className='time_bar'></h1>
                       </div>
@@ -134,7 +134,7 @@ const Mathpair = () => {
               <ul >
                   <li>Click on the OK button to begin the game</li>
                   <li>Game will contain 12 boxes with some mathematical calculation</li>
-                  <li>Click on the correct pair of boxes to form the correct expression</li>
+                  <li>Click on the box and the box containing its result</li>
                   <li>If the boxes are matched they will disappear</li>
                   <li>After a correct match you will get a positive score</li>
 

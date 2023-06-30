@@ -1,6 +1,7 @@
 import flipdata from '../dataset/flipdata'
 import {useState,useRef,useEffect} from 'react'
 import '../css/flipMatch.css'
+let flipper=25;
 const Flipandmatch=()=>{
     // let shuffle =Array.from(flipdata).sort(compare()=>0.5-Math.random())
 
@@ -29,6 +30,7 @@ const Flipandmatch=()=>{
     let divs="";
     let setInt;
     let flipCount=0;
+   
 
     let start="start"
     let stop="stop"
@@ -49,6 +51,13 @@ const Flipandmatch=()=>{
     
     
     const flipchange=(e,index)=>{
+         let flip_count=document.querySelector('.flip_left')
+          flipper=flipper-1;
+          flip_count.innerHTML=flipper
+          if(!flipper){
+            alert("game over")
+            window.location.reload()
+          }
          clearInterval(setInt);
          divs=document.querySelectorAll('.flip_box')[index]
          
@@ -86,7 +95,7 @@ const Flipandmatch=()=>{
     return(
         <>
             <h1>Flip & <span style={{color:"rgba(255,23,43)"}}>Match</span> </h1>
-            {/* <span className='timer'>timer: <span>{timer}</span></span> */}
+            <span className='flip_span' >flip left: <span className='flip_left'>25</span></span>
              
             <section className="flip_sec">
                   {
