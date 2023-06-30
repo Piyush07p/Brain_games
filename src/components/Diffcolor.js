@@ -32,7 +32,7 @@ const Diffcolor = () => {
               if(i!=randbox){
                bgclr[i].style.background=color ; 
               }else{
-               bgclr[randbox].style.background=`rgb(${a},${b-15},${c-25})`
+               bgclr[randbox].style.background=`rgb(${a},${b-15},${c-20})`
               }
           }
      }
@@ -44,7 +44,6 @@ const Diffcolor = () => {
           iter.innerText=iter_cnt;
           iter_cnt++;
           starter();
-          console.log("inside if")
           count=count+10;
           score.innerHTML=count;
          }
@@ -53,7 +52,6 @@ const Diffcolor = () => {
           iter.innerText=iter_cnt;
           iter_cnt++;
           starter();
-          console.log("inside else")
           count=count-10
           score.innerHTML=count;
           
@@ -104,6 +102,7 @@ const Diffcolor = () => {
                </ul>
                <button  style={{display:"block",margin:"2rem auto" ,}} onClick={()=>{
                     rules.style.top=""
+                    starter()
                }}>OK</button>
           </div>
           {/* scores */}

@@ -51,13 +51,11 @@ const Flipandmatch=()=>{
     
     
     const flipchange=(e,index)=>{
-         let flip_count=document.querySelector('.flip_left')
+          let flip_count=document.querySelector('.flip_left')
           flipper=flipper-1;
-          flip_count.innerHTML=flipper
-          if(!flipper){
-            alert("game over")
-            window.location.reload()
-          }
+          flip_count.innerHTML=flipper;
+
+          
          clearInterval(setInt);
          divs=document.querySelectorAll('.flip_box')[index]
          
@@ -83,8 +81,17 @@ const Flipandmatch=()=>{
                     resetgame();
                 }
             }
-            if(flipCount==6){}
-            
+           
+            if(!flipper){
+                let flip_count=document.querySelector('.flip_left')
+                flipper=25;
+                flip_count.innerHTML=flipper;
+                alert("game is over")
+                for(let i=0;i<12;i++){
+                    let divs=document.querySelectorAll('.flip_box')[i]
+                    divs.style.background="rgb(114, 10, 170)"
+                }
+              }
          }
     }
     const[timer,setTimer]=useState(0)

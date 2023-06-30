@@ -16,6 +16,7 @@ const Mathpair = () => {
          time_bar.classList.remove("time_bar_animate")
          counter=0;
          setNumbox([])
+         setFlag(true);
         },18000)
     }
     function genNum(){
@@ -86,7 +87,7 @@ const Mathpair = () => {
         
     }
     const start=()=>{
-        // setFlag(false);
+        setFlag(false);
           let mathrules=document.querySelector('.Math_rules')
          mathrules.style.top="100px"
           
