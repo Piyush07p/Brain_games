@@ -88,8 +88,8 @@ const Mathpair = () => {
     }
     const start=()=>{
         setFlag(false);
-          let mathrules=document.querySelector('.Math_rules')
-         mathrules.style.top="100px"
+        let mathrules=document.querySelector('.Math_rules')
+        mathrules.style.top="100px"
           
    
     }

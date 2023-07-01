@@ -4,20 +4,22 @@ let count=0;
 
 let timerbar;
 let timer_div;
+
+let flag=true;
+let iter=-1;
 const Colormatch=()=>{
 
-    let arr=["red","green","blue","yellow","black","purple","pink"];
-    
+    let arr=["red","green","blue","yellow","black","purple","pink","gray"];
+    const [showbtn,setShowbtn]=useState(true)
    
-    const[iter,setIter]=useState(0);
-
-
   let [str,setStr]=useState("")
   const[randomclr,setRandomclr]=useState("")
 
-
     const changeColor=()=>{ 
-        
+         if(flag){
+            outofgame()
+            flag=false
+         }
         let colors=document.querySelector('.color')
         let timerbar=document.querySelector('.timeBar')
          setRandomclr(arr[Math.floor(Math.random() * arr.length)])
@@ -26,125 +28,57 @@ const Colormatch=()=>{
          colors.style.color=randomclr
          timerbar.style.background=randomclr
 
-
-        setIter(iter+1);
+        iter=iter+1;
 
     }
- 
+ const checker=(clr,ind)=>{
+    let scores=document.querySelector('.scores')
+       if(clr==str){
+        count=count+1;
+        scores.innerText = count ;
+       }
+       else{
+        count=count-1;
+        scores.innerText = count ;
+       }
+        changeColor()
+ }
     function outofgame(){
+        setTimeout(()=>{
         let startbtn=document.querySelector('.startbtn')
-		alert(`out, your score is ${count}`);
+		alert(` your score is ${count} in ${iter} iteration`);
 		count = 0 ;
+        let timerbar=document.querySelector('.timeBar')
 		timerbar.classList.remove("timeBarRun");
-		startbtn.style.display = "block" ;
+        let scores=document.querySelector('.scores')
+        scores.innerHTML="0"
+		setShowbtn(true)
+        setStr("")
+        },16000)
 	}
 
+    let  startgame;
 
-  
-    const correct = () => {
-        console.log(str);
-        console.log(randomclr)
-        console.log("---------")
-        if (str == randomclr) {
-            count++ ;
-		    timerbar.classList.remove("timeBarRun");
-			// tick.classList.add("clicked");
-			setTimeout(() => {
-				timerbar.classList.add("timeBarRun");
-				// tick.classList.remove("clicked");
-			},200);
-            changeColor();
-		}
-		else{
-			outofgame();
-            
-		}
-    }
-
-    const wrong = () => {
-        
-        if (str != randomclr) {
-			changeColor();
-			count++ ;
-			timerbar.classList.remove("timeBarRun");
-			// cross.classList.add("clicked");
-			setTimeout(() => {
-				timerbar.classList.add("timeBarRun");
-				// cross.classList.remove("clicked");
-			},200);
-		}
-		else{
-			outofgame();
-		}
-
-    }
-
-
-// start the game--------
-
-let  startgame;
-
-const Start=()=>{
-    let timerbar=document.querySelector('.timeBar')
-    let startbtn=document.querySelector('.startbtn')
-    timerbar.classList.add("timeBarRun");
-    changeColor();
-    startbtn.style.display = "none" ;
-  
-}
-
-
-var myInt = setInterval(() => {
-     timerbar=document.querySelector('.timeBar')
-     timer_div = document.querySelector('.timer-div');
-     if(timer_div!==null&&timerbar!==null){
-        let timeWidth = timerbar.offsetWidth ;
-       let maxWidth=timer_div.offsetWidth 
-       if (timeWidth >= maxWidth) {
-        alert(`timeout, your score is ${count}`);
-        timerbar.classList.remove("timeBar");
-        setTimeout(() => {
-            count = 0;
-        },100) 
-    }
-    else{
-        let scores=document.querySelector('.scores')
-        scores.innerText = count ;
+    const Start=()=>{
+        count=0;
+        setShowbtn(false)
+        let timerbar=document.querySelector('.timeBar')
+        let startbtn=document.querySelector('.startbtn')
+        timerbar.classList.add("timeBarRun");
+        flag=true;
+        iter=-1;
        
-    }
-     }
+        changeColor();
         
-    
-
-},2000  ); 
-
-
-//   let popup=document.querySelector(".show_score div")
-//   let finalscore=document.querySelector(".finalscore")
-//   let iteration=document.querySelector(".iteration")
-//      function scorepopup(){
-//             finalscore.innerHTML=count;
-//             iteration.innerHTML=iter;  
-//             popup.style.visibility="visible"
-//      }
-
-//    function gopopup(){
-//      popup.style.visibility="hidden"
-//    } 
-
-   document.onkeydown = function(e){
-    if (e.keyCode == 39) {
-        correct();
+      
     }
-    if (e.keyCode == 37) {
-        wrong();
-    }
-}
-    const [colrbox,setColrbox]=useState([{},{},{},{},{},{}])
+
+ const [colrbox,setColrbox]=useState([{clr:"red"},{clr:"green"},{clr:"blue"},{clr:"yellow"},{clr:"black"},{clr:"purple"},{clr:"pink"},{clr:"gray"}])
+
     return(
         <>
             <section>
-                <div className="show_score">
+                {/* <div className="show_score">
                     <div>
                         <span>you scored: </span><span className="finalscore">0</span>
                         <br />
@@ -152,7 +86,7 @@ var myInt = setInterval(() => {
                         <br />
                         <button >Ok</button>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="timer">
                     <div className='timer-div'>
@@ -169,12 +103,22 @@ var myInt = setInterval(() => {
                     <span>score:</span>
                     <h1 className="scores">0</h1>
                 </div>
-                <div className="btn">
-                    <button onClick={wrong}>wrong</button>
-                    <button onClick={correct}>correct</button>
+                <div className="choose_box">
+                   
+                    {
+                        colrbox.map((e,index)=>{
+                            return(
+                                <>
+                                    <div style={{background:e.clr}} className='choose_clr' onClick={()=>checker(e.clr,index)}>
+
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
                 </div>
                 <div className="start">
-                    <button className="startbtn"  onClick={Start}>start</button>
+                   {(showbtn)?<button className="startbtn"  onClick={Start}>start</button>:" "} 
                    
                 </div>
 

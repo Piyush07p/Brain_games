@@ -15,8 +15,8 @@ const Flipandmatch=()=>{
       }
       return arr
     }
-     
-    shuffle(flipdata)  // calling the shuffle function
+    shuffle(flipdata)
+     // calling the shuffle function
     // let flip_sec=document.querySelector('.flip_sec');
     // flip_sec.addEventListener('click',(event)=>{
     //     let curCard=event.target;
@@ -89,6 +89,7 @@ const Flipandmatch=()=>{
                 flip_count.innerHTML=flipper;
                 setTimeout(()=>{
                     alert("game is over ,better luck next time")
+                    
                     for(let i=0;i<12;i++){
                         let divs=document.querySelectorAll('.flip_box')[i]
                         divs.style.background="rgb(114, 10, 170)"
@@ -140,7 +141,7 @@ const Flipandmatch=()=>{
                           )
                       })
                   } 
-                  {/* <button className='flip_btn' onClick={()=> setStartTimer(true)}>start</button> */}
+                  <button  onClick={()=> shuffle(flipdata)}>start</button>
             </section>
         </>
     )

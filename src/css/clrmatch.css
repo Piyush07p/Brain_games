@@ -6,7 +6,14 @@ body{
     border-bottom: 1px solid;
     margin-bottom: 0.5rem;
 }
-
+.choose_clr{
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
 .show_score{
     display: flex;
     justify-content: center;
@@ -35,29 +42,32 @@ body{
 .timer{
     width: 100%;
     text-align: center;
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
 }
 .timer-div{
     width: 18rem;
-    height: 1.8rem;
-    /* border: 1px solid; */
+    height: 1.5rem;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
     border-radius: 10rem;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+   
 }
 
 .timeBar{
     width:0;
     height:100%;
     background:rgba(251, 34, 34, 0.8);
-    border-radius:6px;
+    border-radius:10rem;
 }
 .timeBarRun{
     width:0;
     height:100%;
     background:rgba(251, 34, 34, 0.8);
-    border-radius:6px;
-    animation:timeBar 2s linear infinite;
+    border-radius:10rem;
+    animation:timeBar 16s linear infinite;
 }
 @keyframes timeBar{
     0%{
@@ -93,15 +103,19 @@ body{
 .score span{
     font-size: 1.6rem;
 }
-.score h1{
-    border: 2px solid;
+.scores{
+    border: 1px solid;
+    border-radius: 1rem;
     display: inline-block;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    margin: 1rem 1rem;
 }
-.btn{
+.choose_box{
     width: 100%;
     text-align: center;
-
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1px;
 }
 .btn button{
     margin: 0 2rem;
@@ -142,7 +156,15 @@ body{
         margin:0 0.6rem;
     }
     .start button{
-        padding:0.5rem 1rem;
     
+    
+    }
+    .choose_clr{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .timer-div{
+        width: 15rem;
+        height: 1.5rem;
     }
 }
