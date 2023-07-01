@@ -68,7 +68,7 @@
     background-color: rgb(10, 97, 97);
     color: #fff;
     position: absolute;
-    top: -380px;
+    top: -430px;
     z-index: 100;
     transition: 0.5s ease all;
     /* transform: scale(1); */
@@ -136,7 +136,7 @@
         }
         .diff-sec{
             width: 18rem;
-            height: 28rem;
+            height: 32rem;
          }
         .diff_parent{
             width: 16rem;

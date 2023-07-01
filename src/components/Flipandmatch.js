@@ -141,7 +141,7 @@ const Flipandmatch=()=>{
                           )
                       })
                   } 
-                  <button  onClick={()=> shuffle(flipdata)}>start</button>
+                  {/* <button  onClick={()=> shuffle(flipdata)}>start</button> */}
             </section>
         </>
     )

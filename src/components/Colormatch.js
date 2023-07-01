@@ -32,7 +32,7 @@ const Colormatch=()=>{
 
     }
  const checker=(clr,ind)=>{
-    let scores=document.querySelector('.scores')
+    let scores=document.querySelector('.score_count')
        if(clr==str){
         count=count+1;
         scores.innerText = count ;
@@ -50,7 +50,7 @@ const Colormatch=()=>{
 		count = 0 ;
         let timerbar=document.querySelector('.timeBar')
 		timerbar.classList.remove("timeBarRun");
-        let scores=document.querySelector('.scores')
+        let scores=document.querySelector('.score_count')
         scores.innerHTML="0"
 		setShowbtn(true)
         setStr("")
@@ -101,7 +101,7 @@ const Colormatch=()=>{
                 </div>
                 <div className="score">
                     <span>score:</span>
-                    <h1 className="scores">0</h1>
+                    <h1 className="score_count">0</h1>
                 </div>
                 <div className="choose_box">
                    
