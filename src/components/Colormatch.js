@@ -140,7 +140,7 @@ var myInt = setInterval(() => {
         wrong();
     }
 }
-    
+    const [colrbox,setColrbox]=useState([{},{},{},{},{},{}])
     return(
         <>
             <section>

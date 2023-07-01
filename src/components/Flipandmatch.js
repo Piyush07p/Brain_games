@@ -85,12 +85,30 @@ const Flipandmatch=()=>{
             if(!flipper){
                 let flip_count=document.querySelector('.flip_left')
                 flipper=25;
+                flipCount=0
                 flip_count.innerHTML=flipper;
-                alert("game is over")
-                for(let i=0;i<12;i++){
-                    let divs=document.querySelectorAll('.flip_box')[i]
-                    divs.style.background="rgb(114, 10, 170)"
-                }
+                setTimeout(()=>{
+                    alert("game is over ,better luck next time")
+                    for(let i=0;i<12;i++){
+                        let divs=document.querySelectorAll('.flip_box')[i]
+                        divs.style.background="rgb(114, 10, 170)"
+                    }
+                },1000)
+              }
+              else{
+                    if(flipCount==6){
+                        let flip_count=document.querySelector('.flip_left')
+                        flipper=25;
+                        flip_count.innerHTML=flipper;
+                        flipCount=0
+                       setTimeout(() => {
+                        alert("you played well click OK to play again")
+                        for(let i=0;i<12;i++){
+                            let divs=document.querySelectorAll('.flip_box')[i]
+                            divs.style.background="rgb(114, 10, 170)"
+                        }
+                       }, 1000);
+                    }
               }
          }
     }
