@@ -97,7 +97,7 @@ const Mathpair = () => {
     let box_ind=[]
    
     const checker=(e,ind)=>{
-        // console.log(e)
+        
         let box=document.querySelectorAll('.math_play'); 
         
         box[ind].style.background="rgb(83, 225, 51) "

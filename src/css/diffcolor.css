@@ -10,6 +10,32 @@
    margin-top: 2rem;
     
 }
+.scores{
+    width: 7rem;
+    height: 6rem;
+
+}
+.difftimer{
+    margin: 1rem 0;
+}
+.time_bar{
+    width: 0rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 100, 100);
+    margin: 1rem 0;
+}
+.time_bar_animate{
+    animation: animate 30s linear infinite;
+}
+@keyframes animate {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
 .diff_parent{
 
     width: 25rem;
@@ -65,7 +91,8 @@
    
     box-shadow: 3px 5px 8px rgba(0,0,0,0.4);
     width: 25rem;
-    background-color: rgb(10, 97, 97);
+    border-radius: 1.45rem;
+    background-color: rgb(15, 167, 167);
     color: #fff;
     position: absolute;
     top: -430px;
